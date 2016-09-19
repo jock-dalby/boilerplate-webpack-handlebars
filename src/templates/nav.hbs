@@ -1,1 +1,5 @@
-<nav>link1 link2 link3</nav>
+<ul class="nav nav-tabs">
+  {{#each links}}
+  <li role="presentation" class="active"><a href="{{link}}">{{text}}</a></li>
+  {{/each}}
+</ul>
