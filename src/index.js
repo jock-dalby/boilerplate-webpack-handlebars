@@ -1,5 +1,5 @@
 var userprofile = require('./templates/userprofile.hbs')
-
+var newsfeed = require('./templates/newsfeed.hbs')
 // Add event listener to whole doc to activate when 'DOMContentLoaded'
 document.addEventListener('DOMContentLoaded', function () {
   // Declare womble variables to be add to wombleList
@@ -9,13 +9,24 @@ document.addEventListener('DOMContentLoaded', function () {
         password: "password123"
     }
   ]
-  refreshContent(user)
+  var posts = [{
+      user_id: 1,
+      post: "Hey, what a great day!"
+      },
+  {
+      user_id: 3,
+      post: "Chicken sarnies!"
+  },
+  {
+      user_id: 7,
+      post: "Potato!"
+  }]
+  refreshContent(user, posts)
 })
 
-function refreshContent (user) {
-  var div = document.createElement('div')
-  div.innerHTML = userprofile({ user: user })
-  document.body.appendChild(div)
+function refreshContent (user, posts) {
+  document.getElementById('profile').innerHTML = userprofile({ user: user })
+  document.getElementById('news').innerHTML = newsfeed({ posts: posts })
   // bindEventListeners(wombles)
 }
 
