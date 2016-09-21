@@ -1,5 +1,7 @@
 var userprofile = require('./templates/userprofile.hbs')
 var newsfeed = require('./templates/newsfeed.hbs')
+var followList = require('./templates/followees.hbs')
+var bizList = require('./templates/bizs.hbs')
 // Add event listener to whole doc to activate when 'DOMContentLoaded'
 document.addEventListener('DOMContentLoaded', function () {
   // Declare womble variables to be add to wombleList
@@ -33,12 +35,34 @@ document.addEventListener('DOMContentLoaded', function () {
       user_id: 10,
       followee_id: 4
   }]
-  refreshContent(user, posts, followees)
+  var biz = [{
+      userName: "ParrotDog",
+      logo: "http://idealog.co.nz/media/VERSIONS/images/blog/2012/02/parrotdog_lcolour_hi_950x700--upscale.jpg",
+      password: "password123"
+  },
+  {
+      userName: "Croucher Brewing",
+      logo: "https://pbs.twimg.com/profile_images/627365960/croucher_logo_-_no_star_400x400.jpg",
+      password: "password123"
+  },
+  {
+      userName: "Tuatara",
+      logo: "https://pbs.twimg.com/profile_images/563610998754390016/jcUTpdbT.jpeg",
+      password: "password123"
+  },
+  {
+      userName: "Liberty Brewing",
+      logo: "https://pbs.twimg.com/profile_images/673928067736166400/yYpYqfH7.jpg",
+      password: "password123"
+  }]
+  refreshContent(user, posts, followees, biz)
 })
 
-function refreshContent (user, posts) {
+function refreshContent (user, posts, followees, biz) {
   document.getElementById('profile').innerHTML = userprofile({ user: user })
   document.getElementById('news').innerHTML = newsfeed({ posts: posts })
+  document.getElementById('followlist').innerHTML = followList({ followees: followees })
+  document.getElementById('bizList').innerHTML = bizList({ biz: biz })
   // bindEventListeners(wombles)
 }
 
