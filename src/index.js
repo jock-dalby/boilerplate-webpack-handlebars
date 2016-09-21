@@ -21,7 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
       user_id: 7,
       post: "Potato!"
   }]
-  refreshContent(user, posts)
+  var followees = [{
+      user_id: 10,
+      followee_id: 10
+  },
+  {
+      user_id: 10,
+      followee_id: 2,
+  },
+  {
+      user_id: 10,
+      followee_id: 4
+  }]
+  refreshContent(user, posts, followees)
 })
 
 function refreshContent (user, posts) {
