@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function refreshContent (wombles) {
   // When refreshContent is called, the function creates a new html div element
-  var div = document.createElement('div')
+  var div = document.createElement('div') //<div></div>
   // Inside the div element we insert some innerHTML which is the womble-list hbs template, with the wombles variable passed to wombles key
-  div.innerHTML = wombleList({ wombles: wombles })
+  div.innerHTML = wombleList({ wombles: wombles }) //<div></div>
   // Call the function to attach the newly created div into the DOM
   document.body.appendChild(div)
   // Call the bindEventListeners with the wombles variable
