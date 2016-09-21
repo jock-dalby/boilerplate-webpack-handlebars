@@ -1,9 +1,6 @@
-<h3>News feed</h3>
-  <table>
-    {{#each postItems}}
-    <tr>
-      <td id="postName">{{userName}}</td>
-      <td id="postBody">{{post}}</td>
-    </tr>
-    {{/each}}
-  </table>
+{{> header}}
+  {{#each user}}
+  <h2>{{userName}}</h2>
+  <img src={{logo}}/>
+  {{/each}}
+{{> footer}}
