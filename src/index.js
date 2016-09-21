@@ -1,5 +1,5 @@
 // Requires the hbs template to list wombles on initial page load
-var wombleList = require('./templates/womble-list.hbs')
+var userprofile = require('./templates/userprofile.hbs')
 // Requires the hbs template for the additional drop down when click on one of the list items created by the above hbs template
 var detailsTemplate = require('./templates/details.hbs')
 
